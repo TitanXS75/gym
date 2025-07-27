@@ -1,11 +1,11 @@
 .hero-bg {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+    background: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
     background-size: cover;
     background-position: center;
 }
 .membership-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.13), 0 10px 10px -5px rgba(0,0,0,0.06);
 }
 .trainer-card:hover .trainer-img {
     transform: scale(1.05);
@@ -14,6 +14,46 @@
     transition: all 0.3s ease;
 }
 .testimonial-card:hover {
-    background-color: #1f2937;
+    background-color: #000000;
     color: white;
 }
+
+/* === GREEN/BLACK COLOR ADJUSTMENTS === */
+.bg-main-black { background-color: #000000 !important; }
+.bg-main-green { background-color: #10B981 !important; }
+.text-main-green { color: #10B981 !important; }
+.border-main-green { border-color: #10B981 !important; }
+.bg-green-light { background-color: #A7F3D0 !important; }
+.text-green-light { color: #A7F3D0 !important; }
+.bg-green-dark { background-color: #047857 !important; }
+.text-green-dark { color: #047857 !important; }
+.bg-emerald-100 { background-color: #D1FAE5 !important; }
+.text-emerald-600 { color: #059669 !important; }
+
+/* Buttons */
+.btn-main {
+    background-color: #10B981;
+    color: #fff;
+    border-radius: 9999px;
+    padding: 0.75rem 2rem;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+.btn-main:hover {
+    background-color: #047857;
+    color: #fff;
+}
+.btn-outline {
+    background: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+}
+.btn-outline:hover {
+    background: #fff;
+    color: #000000;
+}
+
+/* Utility for section backgrounds */
+.bg-section-black { background-color: #000000 !important; }
+.bg-section-white { background-color: #ffffff !important; }
+.bg-section-green { background-color: #10B981 !important; }
