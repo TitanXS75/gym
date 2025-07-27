@@ -1,32 +1,29 @@
 // Mobile menu toggle
 const mobileMenuButton = document.getElementById('mobile-menu-button');
 const mobileMenu = document.getElementById('mobile-menu');
-
-mobileMenuButton.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-});
+if (mobileMenuButton) {
+    mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+}
 
 // Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        // Allow newsletter links and buttons to work without error
         const targetId = this.getAttribute('href');
         if (!targetId || targetId === "#") return;
-
         e.preventDefault();
-
-        document.querySelector(targetId).scrollIntoView({
-            behavior: 'smooth'
-        });
-
-        // Close mobile menu if open
-        if (!mobileMenu.classList.contains('hidden')) {
+        const el = document.querySelector(targetId);
+        if (el) {
+            el.scrollIntoView({behavior: 'smooth'});
+        }
+        if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
             mobileMenu.classList.add('hidden');
         }
     });
 });
 
-// Form submission (just for demo)
+// Form demo
 const contactForm = document.querySelector('section#contact form');
 if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
@@ -35,3 +32,20 @@ if (contactForm) {
         contactForm.reset();
     });
 }
+
+// Animate cards on scroll (professional wow effect)
+function animateOnScroll() {
+    document.querySelectorAll('.animated').forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 80) {
+            el.classList.add('fade-in');
+        }
+    });
+}
+window.addEventListener('scroll', animateOnScroll);
+window.addEventListener('DOMContentLoaded', animateOnScroll);
+
+// Add animation trigger (rise/fade in, only once per element)
+document.querySelectorAll('.animated').forEach(el => {
+    el.classList.add('fade-in');
+});
