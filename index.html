@@ -6,31 +6,7 @@
     <title>HMF - Transform Your Body</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        .hero-bg {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
-            background-size: cover;
-            background-position: center;
-        }
-        
-        .membership-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        
-        .trainer-card:hover .trainer-img {
-            transform: scale(1.05);
-        }
-        
-        .testimonial-card {
-            transition: all 0.3s ease;
-        }
-        
-        .testimonial-card:hover {
-            background-color: #1f2937;
-            color: white;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body class="font-sans bg-gray-100">
     <!-- Navigation -->
@@ -40,14 +16,12 @@
                 <i class="fas fa-dumbbell text-2xl text-red-500"></i>
                 <span class="text-xl font-bold">HMF</span>
             </div>
-            
             <!-- Mobile menu button -->
             <div class="md:hidden">
                 <button id="mobile-menu-button" class="text-white focus:outline-none">
                     <i class="fas fa-bars text-2xl"></i>
                 </button>
             </div>
-            
             <!-- Desktop Menu -->
             <div class="hidden md:flex space-x-8">
                 <a href="#" class="hover:text-red-500 transition">Home</a>
@@ -57,12 +31,10 @@
                 <a href="#membership" class="hover:text-red-500 transition">Membership</a>
                 <a href="#contact" class="hover:text-red-500 transition">Contact</a>
             </div>
-            
             <div class="hidden md:block">
                 <button class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-full font-semibold transition">Join Now</button>
             </div>
         </div>
-        
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-gray-800 px-6 py-3">
             <div class="flex flex-col space-y-4">
@@ -76,7 +48,6 @@
             </div>
         </div>
     </nav>
-
     <!-- Hero Section -->
     <section class="hero-bg text-white py-32 px-4">
         <div class="container mx-auto text-center">
@@ -88,7 +59,6 @@
             </div>
         </div>
     </section>
-
     <!-- Stats Section -->
     <section class="bg-gray-800 text-white py-12">
         <div class="container mx-auto px-4">
@@ -108,7 +78,6 @@
             </div>
         </div>
     </section>
-
     <!-- About Section -->
     <section id="about" class="py-20 bg-white">
         <div class="container mx-auto px-4">
@@ -142,7 +111,6 @@
             </div>
         </div>
     </section>
-
     <!-- Classes Section -->
     <section id="classes" class="py-20 bg-gray-100">
         <div class="container mx-auto px-4">
@@ -150,7 +118,6 @@
                 <h2 class="text-3xl font-bold mb-4">Our Classes</h2>
                 <p class="text-gray-600 max-w-2xl mx-auto">We offer a wide variety of fitness classes tailored to all levels and preferences — from high-intensity workouts to cardio and stretching sessions.</p>
             </div>
-            
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Class 1 -->
                 <div class="bg-white rounded-lg overflow-hidden shadow-lg transition hover:shadow-xl">
@@ -170,7 +137,6 @@
                         </div>
                     </div>
                 </div>
-                
                 <!-- Class 2 -->
                 <div class="bg-white rounded-lg overflow-hidden shadow-lg transition hover:shadow-xl">
                     <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Yoga" class="w-full h-64 object-cover">
@@ -189,7 +155,6 @@
                         </div>
                     </div>
                 </div>
-                
                 <!-- Class 3 -->
                 <div class="bg-white rounded-lg overflow-hidden shadow-lg transition hover:shadow-xl">
                     <img src="https://images.unsplash.com/photo-1538805060514-97d9cc17730c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Spin Class" class="w-full h-64 object-cover">
@@ -209,13 +174,11 @@
                     </div>
                 </div>
             </div>
-            
             <div class="text-center mt-12">
                 <button class="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-full font-semibold transition">View All Classes</button>
             </div>
         </div>
     </section>
-
     <!-- Trainers Section -->
     <section id="trainers" class="py-20 bg-white">
         <div class="container mx-auto px-4">
@@ -223,7 +186,6 @@
                 <h2 class="text-3xl font-bold mb-4">Meet Our Trainers</h2>
                 <p class="text-gray-600 max-w-2xl mx-auto">Our certified trainers are here to guide, motivate, and help you achieve your fitness goals.</p>
             </div>
-            
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Trainer 1 -->
                 <div class="trainer-card bg-white rounded-lg overflow-hidden shadow-lg">
@@ -241,7 +203,6 @@
                         </div>
                     </div>
                 </div>
-                
                 <!-- Trainer 2 -->
                 <div class="trainer-card bg-white rounded-lg overflow-hidden shadow-lg">
                     <div class="overflow-hidden">
@@ -258,7 +219,6 @@
                         </div>
                     </div>
                 </div>
-                
                 <!-- Trainer 3 -->
                 <div class="trainer-card bg-white rounded-lg overflow-hidden shadow-lg">
                     <div class="overflow-hidden">
@@ -275,7 +235,6 @@
                         </div>
                     </div>
                 </div>
-                
                 <!-- Trainer 4 -->
                 <div class="trainer-card bg-white rounded-lg overflow-hidden shadow-lg">
                     <div class="overflow-hidden">
@@ -295,7 +254,6 @@
             </div>
         </div>
     </section>
-
     <!-- Testimonials Section -->
     <section class="py-20 bg-gray-100">
         <div class="container mx-auto px-4">
@@ -303,7 +261,6 @@
                 <h2 class="text-3xl font-bold mb-4">What Our Members Say</h2>
                 <p class="text-gray-600 max-w-2xl mx-auto">Hear from our community of fitness enthusiasts who have transformed their lives with us.</p>
             </div>
-            
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Testimonial 1 -->
                 <div class="testimonial-card bg-white p-8 rounded-lg shadow-lg">
@@ -323,7 +280,6 @@
                         <i class="fas fa-star"></i>
                     </div>
                 </div>
-                
                 <!-- Testimonial 2 -->
                 <div class="testimonial-card bg-white p-8 rounded-lg shadow-lg">
                     <div class="flex items-center mb-6">
@@ -342,7 +298,6 @@
                         <i class="fas fa-star"></i>
                     </div>
                 </div>
-                
                 <!-- Testimonial 3 -->
                 <div class="testimonial-card bg-white p-8 rounded-lg shadow-lg">
                     <div class="flex items-center mb-6">
@@ -364,7 +319,6 @@
             </div>
         </div>
     </section>
-
     <!-- Membership Section -->
     <section id="membership" class="py-20 bg-gray-900 text-white">
         <div class="container mx-auto px-4">
@@ -372,7 +326,6 @@
                 <h2 class="text-3xl font-bold mb-4">Membership Plans</h2>
                 <p class="text-gray-300 max-w-2xl mx-auto">Choose the plan that fits your lifestyle and fitness goals.</p>
             </div>
-            
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                 <!-- Basic Plan -->
                 <div class="membership-card bg-gray-800 p-8 rounded-lg transition duration-300">
@@ -398,7 +351,6 @@
                     </ul>
                     <button class="w-full bg-gray-700 hover:bg-gray-600 text-white py-3 rounded-full font-semibold transition">Get Started</button>
                 </div>
-                
                 <!-- Popular Plan -->
                 <div class="membership-card bg-red-600 p-8 rounded-lg transition duration-300 transform scale-105">
                     <div class="flex justify-between items-center mb-2">
@@ -426,7 +378,6 @@
                     </ul>
                     <button class="w-full bg-white hover:bg-gray-100 text-red-600 py-3 rounded-full font-semibold transition">Get Started</button>
                 </div>
-                
                 <!-- Elite Plan -->
                 <div class="membership-card bg-gray-800 p-8 rounded-lg transition duration-300">
                     <h3 class="text-xl font-bold mb-4">Elite</h3>
@@ -454,7 +405,6 @@
             </div>
         </div>
     </section>
-
     <!-- CTA Section -->
     <section class="py-20 bg-red-600 text-white">
         <div class="container mx-auto px-4 text-center">
@@ -463,7 +413,6 @@
             <button class="bg-white hover:bg-gray-100 text-red-600 px-8 py-4 rounded-full font-bold text-lg transition shadow-lg">Sign Up Now</button>
         </div>
     </section>
-
     <!-- Contact Section -->
     <section id="contact" class="py-20 bg-white">
         <div class="container mx-auto px-4">
@@ -471,7 +420,6 @@
                 <div class="md:w-1/2">
                     <h2 class="text-3xl font-bold mb-6">Contact Us</h2>
                     <p class="text-gray-600 mb-8">Have questions or want to schedule a tour? Reach out to us and we'll get back to you as soon as possible.</p>
-                    
                     <div class="space-y-6">
                         <div class="flex items-start">
                             <div class="bg-red-100 p-3 rounded-full mr-4">
@@ -482,7 +430,6 @@
                                 <p class="text-gray-600">123 Fitness Street, Health City, HC 12345</p>
                             </div>
                         </div>
-                        
                         <div class="flex items-start">
                             <div class="bg-red-100 p-3 rounded-full mr-4">
                                 <i class="fas fa-phone-alt text-red-600"></i>
@@ -492,7 +439,6 @@
                                 <p class="text-gray-600">(123) 456-7890</p>
                             </div>
                         </div>
-                        
                         <div class="flex items-start">
                             <div class="bg-red-100 p-3 rounded-full mr-4">
                                 <i class="fas fa-envelope text-red-600"></i>
@@ -502,7 +448,6 @@
                                 <p class="text-gray-600">info@ironfitgym.com</p>
                             </div>
                         </div>
-                        
                         <div class="flex items-start">
                             <div class="bg-red-100 p-3 rounded-full mr-4">
                                 <i class="fas fa-clock text-red-600"></i>
@@ -515,36 +460,30 @@
                         </div>
                     </div>
                 </div>
-                
                 <div class="md:w-1/2">
                     <form class="bg-gray-100 p-8 rounded-lg">
                         <div class="mb-6">
                             <label for="name" class="block text-gray-700 font-medium mb-2">Name</label>
                             <input type="text" id="name" class="w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
                         </div>
-                        
                         <div class="mb-6">
                             <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
                             <input type="email" id="email" class="w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
                         </div>
-                        
                         <div class="mb-6">
                             <label for="subject" class="block text-gray-700 font-medium mb-2">Subject</label>
                             <input type="text" id="subject" class="w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
                         </div>
-                        
                         <div class="mb-6">
                             <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
                             <textarea id="message" rows="5" class="w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"></textarea>
                         </div>
-                        
                         <button type="submit" class="w-full bg-red-600 hover:bg-red-700 text-white py-3 rounded-full font-semibold transition">Send Message</button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
-
     <!-- Footer -->
     <footer class="bg-gray-900 text-white py-12">
         <div class="container mx-auto px-4">
@@ -562,7 +501,6 @@
                         <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
-                
                 <div>
                     <h3 class="text-lg font-bold mb-6">Quick Links</h3>
                     <ul class="space-y-3">
@@ -573,7 +511,6 @@
                         <li><a href="#membership" class="text-gray-400 hover:text-white transition">Membership</a></li>
                     </ul>
                 </div>
-                
                 <div>
                     <h3 class="text-lg font-bold mb-6">Classes</h3>
                     <ul class="space-y-3">
@@ -584,7 +521,6 @@
                         <li><a href="#" class="text-gray-400 hover:text-white transition">Pilates</a></li>
                     </ul>
                 </div>
-                
                 <div>
                     <h3 class="text-lg font-bold mb-6">Newsletter</h3>
                     <p class="text-gray-400 mb-4">Subscribe to our newsletter for fitness tips and special offers.</p>
@@ -594,47 +530,11 @@
                     </form>
                 </div>
             </div>
-            
             <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
                 <p>&copy; 2023 IronFit Gym. All rights reserved.</p>
             </div>
         </div>
     </footer>
-
-    <script>
-        // Mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-                
-                // Close mobile menu if open
-                if (!mobileMenu.classList.contains('hidden')) {
-                    mobileMenu.classList.add('hidden');
-                }
-            });
-        });
-        
-        // Form submission (just for demo)
-        const contactForm = document.querySelector('form');
-        if (contactForm) {
-            contactForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                alert('Thank you for your message! We will get back to you soon.');
-                contactForm.reset();
-            });
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
