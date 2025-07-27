@@ -1,59 +1,228 @@
+:root {
+    --main-green: #064e3b;           /* Deep, professional green */
+    --main-green-light: #10b981;     /* Accent green */
+    --main-green-dark: #022c22;      /* Very dark green */
+    --main-green-gradient: linear-gradient(135deg, #064e3b 0%, #37ef8d 100%);
+    --button-hover: #37ef8d;
+    --bg-black: #000;
+    --bg-white: #fff;
+}
+
+/* --- HERO & BACKGROUND SHAPES --- */
 .hero-bg {
-    background: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+    background: linear-gradient(rgba(6, 78, 59, .78), rgba(0,0,0,.92)), url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
     background-size: cover;
     background-position: center;
+    position: relative;
+    overflow: hidden;
 }
-.membership-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.13), 0 10px 10px -5px rgba(0,0,0,0.06);
+
+/* --- ANIMATION CLASSES --- */
+@keyframes riseUp {
+    0% {
+        opacity: 0; transform: translateY(50px);
+    }
+    80% {
+        opacity: 1; transform: translateY(-8px);
+    }
+    100% {
+        opacity: 1; transform: translateY(0);
+    }
+}
+
+.animated {
+    animation: riseUp 0.8s cubic-bezier(.16,1,.3,1) both;
+}
+.animated.delay-1 { animation-delay: 0.18s; }
+.animated.delay-2 { animation-delay: 0.35s; }
+.animated.delay-3 { animation-delay: 0.55s; }
+.animated.delay-4 { animation-delay: 0.72s; }
+
+/* --- BUTTON STYLES --- */
+.btn-main {
+    background: var(--main-green-gradient);
+    color: #fff;
+    padding: 1rem 2rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 30px;
+    transition: background 0.22s, transform 0.14s;
+    box-shadow: 0 6px 32px 0 rgba(64, 192, 87, 0.26);
+    cursor: pointer;
+    outline: none;
+    will-change: transform;
+    display: inline-block;
+    letter-spacing: 2px;
+}
+.btn-main:hover, .btn-main:focus {
+    background: linear-gradient(135deg, var(--button-hover) 10%, #064e3b 100%);
+    color: #022c22;
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 10px 18px 0 rgba(16,185,129,0.16);
+}
+.btn-outline, .btn-outline-gradient {
+    background: transparent;
+    color: var(--main-green-light);
+    border: 2px solid var(--main-green-light);
+    padding: 1rem 2rem;
+    font-weight: bold;
+    border-radius: 30px;
+    transition: background 0.2s, color 0.2s, transform 0.14s, border-color 0.17s;
+    cursor: pointer;
+    outline: none;
+    font-size: 1.08rem;
+    letter-spacing: 1px;
+}
+.btn-outline:hover, .btn-outline:focus {
+    background: var(--main-green-light);
+    color: #fff;
+    border-color: #fff;
+    transform: translateY(-2.5px) scale(1.05);
+}
+.btn-outline-gradient {
+    border: 2px solid transparent;
+    background: linear-gradient(var(--main-green), var(--main-green-light)) padding-box,
+        linear-gradient(135deg, #2bf092, #54b24f, #064e3b) border-box;
+    color: var(--main-green-light);
+}
+.btn-outline-gradient:hover {
+    background: var(--main-green-gradient);
+    color: #fff;
+}
+
+/* --- NAV / HERO / SECTIONS / CARDS --- */
+.bg-main-black { background-color: var(--bg-black) !important; }
+.text-main-green { color: var(--main-green-light) !important; }
+.bg-main-green { background-color: var(--main-green) !important; }
+.text-green-500 { color: var(--main-green-light) !important; }
+.bg-section-dark { background: #121917 !important; }
+.bg-section-white { background: #fff !important; }
+
+nav, footer {
+    box-shadow: 0 4px 30px rgba(6,78,59,0.13);
+}
+
+/* --- CARD STYLES --- */
+.section-card, .membership-card, .testimonial-card, .trainer-card {
+    border-radius: 2rem;
+    box-shadow: 0 6px 32px 0 rgba(6, 78, 59, 0.13);
+    background: #fff;
+    border: 1.5px solid #e6e6e6;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.24s cubic-bezier(.18,.82,.6,1.12), box-shadow 0.22s;
+}
+.section-card:hover, .membership-card:hover, .testimonial-card:hover, .trainer-card:hover {
+    transform: translateY(-12px) scale(1.027);
+    box-shadow: 0 8px 48px -12px var(--main-green-light), 0 4px 16px -3px rgba(6,78,59,0.18);
+    z-index: 1;
+}
+.membership-card {
+    background: #fff;
+    border: 2.5px solid rgba(16,185,129,0.19);
+    min-height: 27rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    transition: box-shadow 0.28s, border-color 0.22s;
+}
+.membership-card.bg-main-green {
+    background: var(--main-green-gradient);
+    color: #fff;
+    border: 2px solid #2bf092;
+}
+.membership-card.bg-main-green h3,
+.membership-card.bg-main-green span,
+.membership-card.bg-main-green ul li,
+.membership-card.bg-main-green .fa-check {
+    color: #fff !important;
+}
+.membership-card.bg-main-green button {
+    background: #fff;
+    color: var(--main-green);
+    border: none;
+}
+.membership-card.bg-main-green button:hover {
+    background: var(--main-green-dark);
+    color: #fff;
+}
+.membership-card.bg-main-green .fa-check {
+    color: #fff !important;
+}
+
+.membership-card.bg-main-black {
+    background: var(--bg-black);
+    color: #fff;
+    border: 2px solid #215945;
+}
+.membership-card.bg-main-black h3, .membership-card.bg-main-black .fa-check {
+    color: var(--main-green-light) !important;
+}
+.membership-card.bg-main-black .fa-times { color: #eee !important; }
+
+.membership-card button, .testimonial-card button {
+    margin-top: 0.6rem;
+    min-width: 8rem;
+}
+.trainer-card .trainer-img {
+    border-radius: 1rem 1rem 0 0;
+    transition: transform 0.19s;
 }
 .trainer-card:hover .trainer-img {
-    transform: scale(1.05);
-}
-.testimonial-card {
-    transition: all 0.3s ease;
-}
-.testimonial-card:hover {
-    background-color: #000000;
-    color: white;
+    transform: scale(1.08);
 }
 
-/* === GREEN/BLACK COLOR ADJUSTMENTS === */
-.bg-main-black { background-color: #000000 !important; }
-.bg-main-green { background-color: #10B981 !important; }
-.text-main-green { color: #10B981 !important; }
-.border-main-green { border-color: #10B981 !important; }
-.bg-green-light { background-color: #A7F3D0 !important; }
-.text-green-light { color: #A7F3D0 !important; }
-.bg-green-dark { background-color: #047857 !important; }
-.text-green-dark { color: #047857 !important; }
-.bg-emerald-100 { background-color: #D1FAE5 !important; }
-.text-emerald-600 { color: #059669 !important; }
-
-/* Buttons */
-.btn-main {
-    background-color: #10B981;
+/* --- TAG & BADGE STYLES --- */
+.badge-main {
+    background: var(--main-green-light);
     color: #fff;
-    border-radius: 9999px;
-    padding: 0.75rem 2rem;
-    font-weight: bold;
-    transition: background 0.2s;
+    font-weight: 600;
+    padding: 3px 12px;
+    border-radius: 1rem;
+    font-size: .96rem;
+    letter-spacing: 1.2px;
 }
-.btn-main:hover {
-    background-color: #047857;
-    color: #fff;
-}
-.btn-outline {
+.badge-white-outline {
+    border: 1.5px solid #fff;
     background: transparent;
     color: #fff;
-    border: 2px solid #fff;
-}
-.btn-outline:hover {
-    background: #fff;
-    color: #000000;
+    font-weight: bold;
+    padding: 4px 12px;
+    border-radius: 1rem;
+    font-size: .84rem;
+    letter-spacing: 1.1px
 }
 
-/* Utility for section backgrounds */
-.bg-section-black { background-color: #000000 !important; }
-.bg-section-white { background-color: #ffffff !important; }
-.bg-section-green { background-color: #10B981 !important; }
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    margin-bottom: 24px;
+    color: var(--main-green);
+    margin-top: 1.5rem;
+}
+
+.text-faded {
+    color: #879195 !important;
+}
+
+/* --- TESTIMONIALS --- */
+.testimonial-card {
+    transition: box-shadow 0.24s, background 0.21s, color 0.19s;
+    border: 2px solid rgba(16,185,129,0.08);
+}
+.testimonial-card:hover {
+    background: var(--main-green-gradient);
+    color: #fff;
+    border: 2px solid var(--main-green-light);
+}
+.testimonial-card .fa-star, .testimonial-card .fa-star-half-alt { color: var(--main-green-light); }
+.testimonial-card:hover .fa-star, .testimonial-card:hover .fa-star-half-alt { color: #fff; }
+
+/* --- RESPONSIVE / DETAILS --- */
+@media (max-width: 700px) {
+    .section-card, .membership-card, .testimonial-card, .trainer-card {
+        border-radius: 1rem;
+    }
+}
